@@ -1,0 +1,417 @@
+@mixin jfw-css-animation( $var, $duration, $ease)
+{
+	-webkit-transition: $var $duration $ease;
+	-moz-transition: $var $duration $ease;
+	-ms-transition: $var $duration $ease;
+	-o-transition: $var $duration $ease;
+	transition: $var $duration $ease;
+}
+
+@mixin jfw-css-reset-animation ()
+{
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+
+@mixin jfw-css-transform ( $var )
+{
+	-moz-transform: $var;
+	-webkit-transform: $var;
+	-o-transform: $var;
+	-ms-transform: $var;
+	transform: $var;
+}
+
+@mixin jfw-css-transform-origin ( $var )
+{
+	-moz-transform-origin: $var;
+	-webkit-transform-origin: $var;
+	-o-transform-origin: $var;
+	-ms-transform-origin: $var;
+	transform-origin: $var;
+}
+
+@mixin jfw-css-reset-transform ()
+{
+	-moz-transform: none;
+	-webkit-transform: none;
+	-o-transform: none;
+	-ms-transform: none;
+	transform: none;
+}
+
+@mixin jfw-query-retina
+{
+	@media only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (min--moz-device-pixel-ratio: 2),
+	only screen and (-o-min-device-pixel-ratio: 2/1),
+	only screen and (min-device-pixel-ratio: 2)
+	{
+		@content;
+	}
+}
+
+@mixin jfw-responsive-wp-mobile
+{
+	@media only screen 
+	and ( max-width : 782px )
+	{
+		@content;
+	}
+}
+
+@mixin jfw-css-force-render
+{
+	transform: translate3d( 0, 0, 0 );
+	-webkit-transform: translate3d( 0, 0, 0 );
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateZ(0) scale(1.0, 1.0);
+	image-rendering: auto;
+}
+
+
+
+
+
+/* 2015-09-12 http://stephen.io/mediaqueries/ */
+
+/* iPad in portrait & landscape */
+@mixin jfw-ipad-portrait-landscape {
+
+	@media only screen 
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px) {
+
+		@content;
+
+	}
+
+}
+
+/* iPad in landscape */
+@mixin jfw-ipad-landscape {
+
+	@media only screen 
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px) 
+	and (orientation : landscape) {
+
+		@content;
+
+	}
+
+}
+
+/* iPad in portrait */
+@mixin jfw-ipad-portrait {
+
+	@media only screen 
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px) 
+	and (orientation : portrait) {
+
+		@content;
+
+	}
+
+}
+
+/* Retina iPad in portrait & landscape */
+@mixin jfw-ipad-retina-portrait-landscape {
+	
+	@media only screen 
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px)
+	and (-webkit-min-device-pixel-ratio: 2) {
+
+		@content;
+
+	}
+
+}
+
+/* Retina iPad in landscape */
+@mixin jfw-ipad-retina-landscape {
+	
+	@media only screen 
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px) 
+	and (orientation : landscape)
+	and (-webkit-min-device-pixel-ratio: 2) {
+
+		@content;
+
+	}
+
+}
+
+/* Retina iPad in portrait */
+@mixin jfw-ipad-retina-portrait {
+	
+	@media only screen 
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px) 
+	and (orientation : portrait)
+	and (-webkit-min-device-pixel-ratio: 2) {
+
+		@content;
+
+	}
+
+}
+
+/* iPad 1 & 2 in portrait & landscape */
+@mixin jfw-ipad-1-2-portrait-landscape {
+
+	@media only screen 
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px) 
+	and (-webkit-min-device-pixel-ratio: 1){
+
+		@content;
+
+	}
+
+}
+
+/* iPad 1 & 2 in landscape */
+@mixin jfw-ipad-1-2-landscape {
+
+	@media only screen 
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px) 
+	and (orientation : landscape)
+	and (-webkit-min-device-pixel-ratio: 1)  {
+
+		@content;
+
+	}
+
+}
+
+/* iPad 1 & 2 in portrait */
+@mixin jfw-ipad-1-2-portrait {
+
+	@media only screen 
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px) 
+	and (orientation : portrait) 
+	and (-webkit-min-device-pixel-ratio: 1) {
+
+		@content;
+
+	}
+
+}
+
+/* iPad mini in portrait & landscape */
+@mixin jfw-ipad-mini-portrait-landscape {
+
+	@media only screen 
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px)
+	and (-webkit-min-device-pixel-ratio: 1)  {
+
+		@content;
+
+	}
+
+}
+
+/* iPad mini in landscape */
+@mixin jfw-ipad-mini-landscape {
+
+	@media only screen 
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px) 
+	and (orientation : landscape)
+	and (-webkit-min-device-pixel-ratio: 1)  {
+
+		@content;
+
+	}
+
+}
+
+/* iPad mini in portrait */
+@mixin jfw-ipad-mini-portrait {
+
+	@media only screen 
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px) 
+	and (orientation : portrait)
+	and (-webkit-min-device-pixel-ratio: 1)  {
+
+		@content;
+
+	}
+
+}
+
+/* iPhone 6 in portrait & landscape */
+@mixin jfw-iphone-6-portrait-landscape {
+
+	@media only screen 
+	and (min-device-width : 375px) 
+	and (max-device-width : 667px) {
+
+		@content;
+
+	}
+
+}
+
+/* iPhone 6 in landscape */
+@mixin jfw-iphone-6-landscape {
+
+	@media only screen 
+	and (min-device-width : 375px) 
+	and (max-device-width : 667px) 
+	and (orientation : landscape) {
+
+		@content;
+
+	}
+
+}
+
+/* iPhone 6 in portrait */
+@mixin jfw-iphone-6-portrait {
+
+	@media only screen 
+	and (min-device-width : 375px) 
+	and (max-device-width : 667px) 
+	and (orientation : portrait) {
+
+		@content;
+
+	}
+
+}
+
+
+/* iPhone 6 Plus in portrait & landscape */
+@mixin jfw-iphone-6-plus-portrait-landscape {
+
+	@media only screen 
+	and (min-device-width : 414px) 
+	and (max-device-width : 736px) {
+
+		@content;
+
+	}
+
+}
+
+/* iPhone 6 Plus in landscape */
+@mixin jfw-iphone-6-plus-landscape {
+
+	@media only screen 
+	and (min-device-width : 414px) 
+	and (max-device-width : 736px) 
+	and (orientation : landscape) {
+
+		@content;
+
+	}
+
+}
+
+/* iPhone 6 Plus in portrait */
+@mixin jfw-iphone-6-plus-portrait {
+
+	@media only screen 
+	and (min-device-width : 414px) 
+	and (max-device-width : 736px) 
+	and (orientation : portrait) {
+
+		@content;
+
+	}
+
+}
+
+/* iPhone 5 & 5S in portrait & landscape */
+@mixin jfw-iphone-5-5s-portrait-landscape {
+
+	@media only screen 
+	and (min-device-width : 320px) 
+	and (max-device-width : 568px) {
+
+		@content;
+
+	}
+
+}
+
+/* iPhone 5 & 5S in landscape */
+@mixin jfw-iphone-5-5s-landscape {
+
+	@media only screen 
+	and (min-device-width : 320px) 
+	and (max-device-width : 568px) 
+	and (orientation : landscape) {
+
+		@content;
+
+	}
+
+}
+
+/* iPhone 5 & 5S in portrait */
+@mixin jfw-iphone-5-5s-portrait {
+
+	@media only screen 
+	and (min-device-width : 320px) 
+	and (max-device-width : 568px) 
+	and (orientation : portrait) {
+
+		@content;
+
+	}
+
+}
+
+/* iPhone 2G-4S in portrait & landscape */
+@mixin jfw-iphone-2g-4g-portrait-landscape {
+
+	@media only screen 
+	and (min-device-width : 320px) 
+	and (max-device-width : 480px) {
+
+		@content;
+
+	}
+
+}
+
+/* iPhone 2G-4S in landscape */
+@mixin jfw-iphone-2g-4g-lanscape {
+
+	@media only screen 
+	and (min-device-width : 320px) 
+	and (max-device-width : 480px) 
+	and (orientation : landscape) {
+
+		@content;
+
+	}
+
+}
+
+/* iPhone 2G-4S in portrait */
+@mixin jfw-iphone-2g-4g-portrait {
+
+	@media only screen 
+	and (min-device-width : 320px) 
+	and (max-device-width : 480px) 
+	and (orientation : portrait) {
+
+		@content;
+
+	}
+
+}
