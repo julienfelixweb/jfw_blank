@@ -215,37 +215,21 @@ add_shortcode( 'email', 'wpcodex_hide_email_shortcode' );
 
 
 
+// !JFW - Remove from Backend Sidebar
 
-
-/*
- *
- * JFW - 2015-08-09
- * Remove from Backend Sidebar
- *
- */
-
-function remove_menus () {
-
+function remove_menus ()
+{
 	global $menu;
-
 	$restricted = array(
-
 		__('Comments')
-
 	);
-
 	end( $menu );
-
-	while( prev( $menu ) ) {
-
+	while( prev( $menu ) )
+	{
 		$value = explode( ' ', $menu[ key( $menu ) ][0] );
-
 		if( in_array( $value[0] != NULL?$value[0]:"" , $restricted ) ) {
 			unset( $menu[ key( $menu ) ] );
 		}
-
 	}
-
 }
-
 add_action('admin_menu', 'remove_menus');
