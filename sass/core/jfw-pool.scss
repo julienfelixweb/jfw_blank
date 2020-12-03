@@ -63,6 +63,9 @@
 	}
 }
 
+$jfw-wp-admin-bar-height: 32px;
+$jfw-wp-mobile-admin-bar-height: 46px;
+
 @mixin jfw-css-force-render
 {
 	transform: translate3d( 0, 0, 0 );

@@ -18,6 +18,7 @@
  */
 
 // include 'jfw_plugins/jfw_blazy_support/jfw_blazy_support.php';
+// include 'jfw_plugins/jfw_swiper_support/jfw_swiper_support.php';
 
 
 
@@ -43,8 +44,10 @@ add_action( 'after_setup_theme', 'jfw_blank_setup' );
 
 function jfw_blank_scripts()
 {
-	wp_enqueue_style( 'jfw-blank-style', get_stylesheet_uri() );
-	wp_enqueue_script( 'jfw-blank-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20151204', true );
+	// !JFW — 2019-12-12 — Prevent CSS Caching
+	wp_enqueue_style( 'jfw-blank-style', get_stylesheet_uri(), array(), md5(filemtime(dirname(__FILE__) . "/style.css")) );
+	// !JFW — 2019-12-12 — Prevent JS Caching
+	wp_enqueue_script( 'jfw-blank-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), md5(filemtime(dirname(__FILE__) . '/js/functions.js')), true );
 }
 add_action( 'wp_enqueue_scripts', 'jfw_blank_scripts' );
 
