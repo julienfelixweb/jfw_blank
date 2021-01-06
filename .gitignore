@@ -1,2 +1,9 @@
 
 config.codekit3
+jfw_plugins/.DS_Store
+jfw_plugins/jfw_headroom_support/js/.DS_Store
+jfw_plugins/jfw_photoswipe_support/.DS_Store
+jfw_plugins/jfw_plyr_support/dist/.DS_Store
+jfw_plugins/jfw_stickykit_support/js/.DS_Store
+jfw_plugins/jfw_swiper_support/js/.DS_Store
+.DS_Store
